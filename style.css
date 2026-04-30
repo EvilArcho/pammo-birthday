@@ -2026,20 +2026,18 @@ h1{
         overflow: visible;
         position: relative;
         width: 100%;
-        display: flex;
-        flex-direction: column;
     }
     
     #banner-wrapper {
-        position: relative;
+        position: absolute;
         bottom: auto;
-        top: auto;
-        left: 0;
-        width: 100%;
+        top: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(100%, 360px);
         height: auto;
         padding: 4px 0;
         z-index: 4;
-        flex-shrink: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -2077,18 +2075,11 @@ h1{
     .char-label::before { display: none !important; }
     .char-label::after { display: none !important; }
 
-    /* Center content area for cake */
-    #scene::after {
-        content: '';
-        flex: 1;
-        display: block;
-    }
-
     #cake-area {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
+        position: absolute;
+        bottom: 125px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 100%;
         padding: 10px 0;
         gap: 0;
@@ -2101,7 +2092,7 @@ h1{
     }
     
     #cake { 
-        max-width: 60vw;
+        max-width: 80vw;
         margin: 0 auto;
     }
     
@@ -2121,20 +2112,34 @@ h1{
         display: block;
     }
     
-    #cake-table { display: none !important; }
+    #cake-table {
+        display: flex !important;
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+    }
     
-    .table-leg { display: none !important; }
+    #table-top {
+        width: min(70vw, 280px);
+    }
+
+    #table-legs {
+        width: min(60vw, 240px);
+    }
+
+    .table-leg { display: block !important; }
     
     #ground { 
         height: 40px; 
         width: 100%;
-        position: relative;
+        position: absolute;
         bottom: 0;
         left: 0;
         z-index: 1;
         margin: 0;
         padding: 0;
-        flex-shrink: 0;
     }
     
     #signboard { display: none !important; }
