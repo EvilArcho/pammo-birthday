@@ -2090,3 +2090,99 @@ h1{
     #gift-btn { display: block; width: min(90vw, 240px); margin: 20px auto; }
     #gift-text { max-width: 90vw; font-size: 0.95rem; }
 }
+
+@media (max-width: 600px) and (orientation: portrait) {
+    #scene { height: auto; min-height: calc(100vh - 90px); overflow: visible; }
+    #banner-wrapper {
+        position: static;
+        bottom: auto;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: auto;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 10px 0 0;
+    }
+    #banner {
+        width: 100%;
+        gap: 8px;
+    }
+    #banner-characters {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        justify-content: center;
+        padding: 0 6px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .char-wrap { gap: 36px; }
+    #cake-area {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: 20px auto 0;
+        padding: 0 14px;
+        gap: 40px;
+    }
+    #cake { max-width: 88vw; }
+    #cake-table { position: relative; bottom: auto; left: auto; transform: none; margin: 0 auto; width: 220px; }
+    .table-leg { height: 70px; }
+    #cake-top { width: 180px; height: 180px; margin: 28px auto 8px; }
+    #cake-slice-view { width: min(92vw, 280px); margin: 28px auto; }
+    #plate { width: 90%; }
+    #slice { width: 88%; }
+    #cake-hint { font-size: 0.96rem; margin-bottom: 10px; }
+    #ground { height: 40px; }
+    #signboard { display: none; }
+    #gift-popup,
+    #gift-popup-red,
+    #gift-popup-blue {
+        width: 96vw;
+        max-width: 96vw;
+        padding: 20px 14px 26px;
+    }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+    body { border-width: 10px; }
+    #scene { height: 100vh; overflow: hidden; }
+    #banner-wrapper {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(92vw, 560px);
+        height: auto;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 10px 0;
+    }
+    #banner-characters {
+        position: absolute;
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 12px;
+        padding: 0 10px;
+    }
+    .character-img { height: 140px; }
+    #cake-area {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 36px;
+    }
+    #cake-table { width: 200px; }
+    #cake-top { width: 170px; height: 170px; margin: 0 auto 8px; }
+    #cake-slice-view { width: min(80vw, 260px); margin: 0 auto; }
+    #gift-btn { width: min(80vw, 240px); }
+    #gift-text { font-size: 0.95rem; }
+    #gifts { gap: 40px; margin-top: 40px; }
+    #signboard { display: none; }
+    #ground { height: 36px; }
+}
