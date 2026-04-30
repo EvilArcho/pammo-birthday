@@ -2017,7 +2017,15 @@ h1{
 
     h1 { font-size: 1.1rem; padding: 8px 12px; }
 
-    #scene { height: auto; min-height: calc(100vh - 90px); overflow: visible; }
+    #scene {
+        height: auto;
+        min-height: calc(100vh - 90px);
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
     
     #banner-wrapper {
         position: static;
@@ -2026,14 +2034,21 @@ h1{
         left: auto;
         width: 100%;
         height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         grid-template-columns: 1fr;
         justify-items: center;
-        padding: 10px 0 0;
+        padding: 6px 0;
+        order: 1;
     }
+    
+    .banner-pole-ground { display: none; }
     
     #banner {
         width: 100%;
-        gap: 8px;
+        gap: 4px;
+        order: 1;
     }
     
     #banner-characters {
@@ -2041,34 +2056,38 @@ h1{
         bottom: auto;
         left: auto;
         transform: none;
+        width: 100%;
         justify-content: center;
-        padding: 0 6px;
+        padding: 8px 6px;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 8px;
+        order: 3;
     }
     
-    .char-wrap { gap: 36px; }
-    .character-img { height: 150px; width: auto; }
+    .char-wrap { gap: 20px; }
+    .character-img { height: 140px; width: auto; }
 
     #cake-area {
         position: relative;
         bottom: auto;
         left: auto;
         transform: none;
-        margin: 20px auto 0;
-        padding: 0 14px;
-        gap: 40px;
+        margin: 16px auto 0;
+        padding: 0 10px;
+        gap: 30px;
+        order: 2;
+        width: 100%;
     }
     
-    #cake { max-width: 88vw; }
-    #cake-table { position: relative; bottom: auto; left: auto; transform: none; margin: 0 auto; width: 220px; }
-    .table-leg { height: 70px; }
-    #cake-top { width: 180px; height: 180px; margin: 28px auto 8px; }
-    #cake-slice-view { width: min(92vw, 280px); margin: 28px auto; }
-    #plate { width: 90%; }
-    #slice { width: 88%; }
-    #cake-hint { font-size: 0.96rem; margin-bottom: 10px; }
-    #ground { height: 40px; }
+    #cake { max-width: 85vw; }
+    #cake-table { position: relative; bottom: auto; left: auto; transform: none; margin: 0 auto; width: 200px; }
+    .table-leg { height: 60px; }
+    #cake-top { width: 170px; height: 170px; margin: 24px auto 6px; }
+    #cake-slice-view { width: min(88vw, 260px); margin: 24px auto; }
+    #plate { width: 88%; }
+    #slice { width: 85%; }
+    #cake-hint { font-size: 0.92rem; margin-bottom: 8px; }
+    #ground { height: 35px; order: 4; width: 100%; }
     #signboard { display: none; }
 
     .poke-card,
@@ -2104,6 +2123,7 @@ h1{
     #gift-btn { display: block; width: min(90vw, 240px); margin: 20px auto; }
     #gift-text { max-width: 90vw; font-size: 0.95rem; }
 }
+
 
 /* ── MOBILE — LANDSCAPE ── */
 @media (max-width: 900px) and (orientation: landscape) {
