@@ -2019,31 +2019,54 @@ h1{
 @media (max-width: 900px) and (orientation: portrait) {
     body { border-width: 8px; }
 
-    h1 { font-size: 1.1rem; padding: 8px 12px; display: block; }
+    h1 { font-size: 1.1rem; padding: 8px 12px; display: block; margin: 0; }
 
     #scene {
         height: 100vh;
-        overflow: hidden;
+        overflow: visible;
         position: relative;
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
     
     #banner-wrapper {
-        position: static;
+        position: relative;
         bottom: auto;
-        top: 0;
+        top: auto;
         left: 0;
         width: 100%;
         height: auto;
-        padding: 6px 0;
+        padding: 4px 0;
         z-index: 4;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-template-columns: none;
     }
     
     .banner-pole-ground { display: none !important; }
     
     #banner {
         width: 100%;
-        gap: 4px;
+        gap: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bunting {
+        display: flex;
+        justify-content: center;
+        gap: 2px;
+        flex-wrap: wrap;
+    }
+    
+    .flag {
+        width: 32px;
+        height: 40px;
+        font-size: 0.9rem;
     }
     
     #banner-characters { display: none !important; }
@@ -2054,20 +2077,31 @@ h1{
     .char-label::before { display: none !important; }
     .char-label::after { display: none !important; }
 
+    /* Center content area for cake */
+    #scene::after {
+        content: '';
+        flex: 1;
+        display: block;
+    }
+
     #cake-area {
-        position: absolute;
-        bottom: 35px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: auto;
-        padding: 0;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        padding: 10px 0;
         gap: 0;
         z-index: 3;
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     #cake { 
-        max-width: 85vw;
+        max-width: 60vw;
         margin: 0 auto;
     }
     
@@ -2092,7 +2126,7 @@ h1{
     .table-leg { display: none !important; }
     
     #ground { 
-        height: 35px; 
+        height: 40px; 
         width: 100%;
         position: relative;
         bottom: 0;
@@ -2105,7 +2139,13 @@ h1{
     
     #signboard { display: none !important; }
     
-    #blowout { display: none !important; }
+    #blowout { 
+        display: block !important; 
+        position: relative;
+        margin: 10px auto;
+        font-size: 0.85rem; 
+        padding: 8px 16px; 
+    }
 
     .poke-card,
     #card-stage {
