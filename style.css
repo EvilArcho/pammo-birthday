@@ -2081,8 +2081,8 @@ h1{
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
-        padding: 10px 0;
-        gap: 12px;
+        padding: 52px 0 10px;
+        gap: 0;
         z-index: 3;
         margin: 0;
         display: flex;
@@ -2146,11 +2146,14 @@ h1{
     
     #blowout { 
         display: block !important; 
-        position: relative;
-        order: -1;
-        margin: 10px auto;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
         font-size: 0.85rem; 
         padding: 8px 16px; 
+        z-index: 6;
     }
 
     .poke-card,
