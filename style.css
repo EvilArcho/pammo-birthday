@@ -2015,7 +2015,7 @@ h1{
 @media (max-width: 900px) and (orientation: portrait) {
     body { border-width: 8px; }
 
-    h1 { font-size: 1.1rem; padding: 8px 12px; }
+    h1 { font-size: 1.1rem; padding: 8px 12px; display: block; }
 
     #scene {
         height: auto;
@@ -2024,6 +2024,7 @@ h1{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
         width: 100%;
     }
     
@@ -2040,7 +2041,7 @@ h1{
         grid-template-columns: 1fr;
         justify-items: center;
         padding: 6px 0;
-        order: 1;
+        z-index: 4;
     }
     
     .banner-pole-ground { display: none; }
@@ -2048,67 +2049,70 @@ h1{
     #banner {
         width: 100%;
         gap: 4px;
-        order: 1;
     }
     
-    #banner-characters {
-        position: absolute;
-        bottom: 50px;
-        left: 0;
-        right: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-around;
-        padding: 0 8px;
-        flex-wrap: nowrap;
-        gap: 0;
-        z-index: 5;
-    }
+    #banner-characters { display: none; }
     
-    .char-wrap { 
-        gap: 20px;
-        flex-shrink: 0;
-    }
-    .character-img { height: 140px; width: auto; }
-    .char-label { font-size: 13px; }
+    .char-wrap { display: none; }
+    .character-img { display: none; }
+    .char-label { display: none; }
 
     #cake-area {
-        position: absolute;
-        bottom: 120px;
-        left: 50%;
-        transform: translateX(-50%);
-        gap: 10px;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: 20px auto 0;
+        padding: 0;
+        gap: 0;
         z-index: 3;
         width: auto;
-        padding: 0;
     }
     
-    #cake { max-width: 85vw; }
+    #cake { 
+        max-width: 85vw;
+        margin: 0 auto;
+    }
+    
+    #cake-top { 
+        width: 170px; 
+        height: 170px; 
+        margin: 0 auto;
+        display: block;
+    }
+    
+    #cake-slice-view { 
+        width: min(88vw, 260px); 
+        margin: 40px auto;
+        display: none;
+    }
+    
+    #plate { width: 88%; }
+    #slice { width: 85%; }
+    #cake-hint { 
+        font-size: 0.92rem; 
+        margin: 12px auto 0;
+        display: block;
+    }
     
     #cake-table { 
-        position: absolute;
-        bottom: 50px;
-        left: 50%;
-        transform: translateX(-50%);
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
         width: 200px;
+        margin: 0 auto;
         z-index: 2;
     }
     
     .table-leg { height: 60px; }
-    #cake-top { width: 170px; height: 170px; margin: 0 auto; }
-    #cake-slice-view { width: min(88vw, 260px); margin: 40px auto; }
-    #plate { width: 88%; }
-    #slice { width: 85%; }
-    #cake-hint { font-size: 0.92rem; margin-bottom: 8px; }
     
     #ground { 
         height: 35px; 
         width: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        position: relative;
+        bottom: auto;
+        left: auto;
         z-index: 1;
     }
     
