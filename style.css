@@ -2044,18 +2044,20 @@ h1{
         z-index: 4;
     }
     
-    .banner-pole-ground { display: none; }
+    .banner-pole-ground { display: none !important; }
     
     #banner {
         width: 100%;
         gap: 4px;
     }
     
-    #banner-characters { display: none; }
+    #banner-characters { display: none !important; }
     
-    .char-wrap { display: none; }
-    .character-img { display: none; }
-    .char-label { display: none; }
+    .char-wrap { display: none !important; }
+    .character-img { display: none !important; }
+    .char-label { display: none !important; }
+    .char-label::before { display: none !important; }
+    .char-label::after { display: none !important; }
 
     #cake-area {
         position: relative;
@@ -2095,17 +2097,9 @@ h1{
         display: block;
     }
     
-    #cake-table { 
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        width: 200px;
-        margin: 0 auto;
-        z-index: 2;
-    }
+    #cake-table { display: none !important; }
     
-    .table-leg { height: 60px; }
+    .table-leg { display: none !important; }
     
     #ground { 
         height: 35px; 
@@ -2116,7 +2110,7 @@ h1{
         z-index: 1;
     }
     
-    #signboard { display: none; }
+    #signboard { display: none !important; }
 
     .poke-card,
     #card-stage {
