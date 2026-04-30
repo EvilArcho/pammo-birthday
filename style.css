@@ -2018,13 +2018,12 @@ h1{
     h1 { font-size: 1.1rem; padding: 8px 12px; display: block; }
 
     #scene {
-        height: auto;
-        min-height: calc(100vh - 90px);
+        height: 100vh;
         overflow: visible;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         width: 100%;
     }
     
@@ -2042,6 +2041,7 @@ h1{
         justify-items: center;
         padding: 6px 0;
         z-index: 4;
+        flex-shrink: 0;
     }
     
     .banner-pole-ground { display: none !important; }
@@ -2064,11 +2064,15 @@ h1{
         bottom: auto;
         left: auto;
         transform: none;
-        margin: 0 auto;
+        margin: auto auto 0 auto;
         padding: 0;
         gap: 0;
         z-index: 3;
         width: auto;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
     
     #cake { 
@@ -2084,8 +2088,6 @@ h1{
     }
     
     #cake-slice-view { 
-        width: min(88vw, 260px); 
-        margin: 40px auto;
         display: none;
     }
     
@@ -2105,10 +2107,12 @@ h1{
         height: 35px; 
         width: 100%;
         position: relative;
-        bottom: auto;
-        left: auto;
+        bottom: 0;
+        left: 0;
         z-index: 1;
-        margin-top: auto;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
     }
     
     #signboard { display: none !important; }
