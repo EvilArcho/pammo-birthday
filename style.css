@@ -2052,42 +2052,66 @@ h1{
     }
     
     #banner-characters {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        right: 0;
         width: 100%;
-        justify-content: center;
-        padding: 8px 6px;
-        flex-wrap: wrap;
-        gap: 8px;
-        order: 3;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-around;
+        padding: 0 8px;
+        flex-wrap: nowrap;
+        gap: 0;
+        z-index: 5;
     }
     
-    .char-wrap { gap: 20px; }
+    .char-wrap { 
+        gap: 20px;
+        flex-shrink: 0;
+    }
     .character-img { height: 140px; width: auto; }
+    .char-label { font-size: 13px; }
 
     #cake-area {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin: 16px auto 0;
-        padding: 0 10px;
-        gap: 30px;
-        order: 2;
-        width: 100%;
+        position: absolute;
+        bottom: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 10px;
+        z-index: 3;
+        width: auto;
+        padding: 0;
     }
     
     #cake { max-width: 85vw; }
-    #cake-table { position: relative; bottom: auto; left: auto; transform: none; margin: 0 auto; width: 200px; }
+    
+    #cake-table { 
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        z-index: 2;
+    }
+    
     .table-leg { height: 60px; }
-    #cake-top { width: 170px; height: 170px; margin: 24px auto 6px; }
-    #cake-slice-view { width: min(88vw, 260px); margin: 24px auto; }
+    #cake-top { width: 170px; height: 170px; margin: 0 auto; }
+    #cake-slice-view { width: min(88vw, 260px); margin: 40px auto; }
     #plate { width: 88%; }
     #slice { width: 85%; }
     #cake-hint { font-size: 0.92rem; margin-bottom: 8px; }
-    #ground { height: 35px; order: 4; width: 100%; }
+    
+    #ground { 
+        height: 35px; 
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
     #signboard { display: none; }
 
     .poke-card,
