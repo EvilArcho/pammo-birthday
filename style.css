@@ -2081,10 +2081,7 @@ h1{
     }
     
     #cake-top { 
-        width: 170px; 
-        height: 170px; 
-        margin: 0 auto;
-        display: block;
+        display: none;
     }
     
     #cake-slice-view { 
@@ -2116,6 +2113,8 @@ h1{
     }
     
     #signboard { display: none !important; }
+    
+    #blowout { display: none !important; }
 
     .poke-card,
     #card-stage {
