@@ -2011,88 +2011,14 @@ h1{
     100% { filter: brightness(1); transform: scale(1); }
 }
 
-/* ── MOBILE ── */
-@media (max-width: 600px) {
+/* ── MOBILE — PORTRAIT ── */
+@media (max-width: 900px) and (orientation: portrait) {
     body { border-width: 8px; }
 
     h1 { font-size: 1.1rem; padding: 8px 12px; }
 
-    /* Scene and banners */
-    #scene { height: calc(100vh - 70px); overflow: hidden; }
-    #banner-wrapper {
-        top: 10px;
-        bottom: auto;
-        height: auto;
-        grid-template-columns: 1fr;
-        justify-items: center;
-        padding: 8px 8px 0;
-    }
-    #banner { gap: 8px; }
-    #banner-characters {
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        gap: 10px;
-    }
-    .char-wrap { gap: 45px; }
-    .character-img { height: 150px; width: auto; }
-
-    /* Cake area */
-    #cake-area { bottom: 92px; gap: 40px; padding: 0 12px; }
-    #cake { max-width: 88vw; }
-    #cake-table { width: 220px; }
-    .table-leg { height: 70px; }
-    #cake-top { width: 180px; height: 180px; margin: 28px auto 8px; }
-    #cake-slice-view { width: min(92vw, 280px); margin: 40px auto; }
-    #plate { width: 90%; }
-    #slice { width: 88%; }
-    #cake-hint { font-size: 0.96rem; margin-bottom: 8px; }
-
-    /* Card in popup */
-    .poke-card,
-    #card-stage {
-        width: min(88vw, 320px);
-        height: auto;
-        aspect-ratio: 5 / 7;
-    }
-
-    /* Popups full-screen on mobile */
-    #gift-popup,
-    #gift-popup-red,
-    #gift-popup-blue {
-        width: 96vw;
-        max-width: 96vw;
-        padding: 22px 14px 28px;
-    }
-    #gift-popup-red,
-    #gift-popup-blue { max-height: 90vh; }
-    #gift-popup { height: auto; max-height: 90vh; }
-
-    /* Fortune teller compact */
-    #fortune-ball { width: 130px; height: 130px; }
-    #fortune-title { font-size: 1.15rem; }
-    #fortune-text { font-size: 0.88rem; }
-    #fortune-btn { padding: 11px 26px; font-size: 0.85rem; }
-    #fortune-teller { gap: 14px; }
-
-    /* Nav buttons */
-    .card-nav-btn { width: 38px; height: 38px; font-size: 1.3rem; }
-
-    /* Sign board — hide on very small screens */
-    #signboard { display: none; }
-
-    /* Blowout button */
-    #blowout { font-size: 0.85rem; padding: 8px 16px; }
-
-    /* Gifts screen */
-    #gifts { gap: 46px; margin-top: 50px; }
-    .gift { width: 88px; height: 88px; transform: scale(0.78); }
-    #gift-btn { display: block; width: min(90vw, 240px); margin: 20px auto; }
-    #gift-text { max-width: 90vw; font-size: 0.95rem; }
-}
-
-@media (max-width: 600px) and (orientation: portrait) {
     #scene { height: auto; min-height: calc(100vh - 90px); overflow: visible; }
+    
     #banner-wrapper {
         position: static;
         bottom: auto;
@@ -2104,10 +2030,12 @@ h1{
         justify-items: center;
         padding: 10px 0 0;
     }
+    
     #banner {
         width: 100%;
         gap: 8px;
     }
+    
     #banner-characters {
         position: relative;
         bottom: auto;
@@ -2118,7 +2046,10 @@ h1{
         flex-wrap: wrap;
         gap: 12px;
     }
+    
     .char-wrap { gap: 36px; }
+    .character-img { height: 150px; width: auto; }
+
     #cake-area {
         position: relative;
         bottom: auto;
@@ -2128,6 +2059,7 @@ h1{
         padding: 0 14px;
         gap: 40px;
     }
+    
     #cake { max-width: 88vw; }
     #cake-table { position: relative; bottom: auto; left: auto; transform: none; margin: 0 auto; width: 220px; }
     .table-leg { height: 70px; }
@@ -2138,6 +2070,14 @@ h1{
     #cake-hint { font-size: 0.96rem; margin-bottom: 10px; }
     #ground { height: 40px; }
     #signboard { display: none; }
+
+    .poke-card,
+    #card-stage {
+        width: min(88vw, 320px);
+        height: auto;
+        aspect-ratio: 5 / 7;
+    }
+
     #gift-popup,
     #gift-popup-red,
     #gift-popup-blue {
@@ -2145,44 +2085,113 @@ h1{
         max-width: 96vw;
         padding: 20px 14px 26px;
     }
+    #gift-popup-red,
+    #gift-popup-blue { max-height: 90vh; }
+    #gift-popup { height: auto; max-height: 90vh; }
+
+    #fortune-ball { width: 130px; height: 130px; }
+    #fortune-title { font-size: 1.15rem; }
+    #fortune-text { font-size: 0.88rem; }
+    #fortune-btn { padding: 11px 26px; font-size: 0.85rem; }
+    #fortune-teller { gap: 14px; }
+
+    .card-nav-btn { width: 38px; height: 38px; font-size: 1.3rem; }
+
+    #blowout { font-size: 0.85rem; padding: 8px 16px; }
+
+    #gifts { gap: 46px; margin-top: 50px; }
+    .gift { width: 88px; height: 88px; transform: scale(0.78); }
+    #gift-btn { display: block; width: min(90vw, 240px); margin: 20px auto; }
+    #gift-text { max-width: 90vw; font-size: 0.95rem; }
 }
 
+/* ── MOBILE — LANDSCAPE ── */
 @media (max-width: 900px) and (orientation: landscape) {
-    body { border-width: 10px; }
+    body { border-width: 8px; }
+
+    h1 { font-size: 1rem; padding: 6px 10px; }
+
     #scene { height: 100vh; overflow: hidden; }
+    
     #banner-wrapper {
         position: absolute;
-        top: 10px;
+        top: 8px;
         left: 50%;
         transform: translateX(-50%);
-        width: min(92vw, 560px);
+        width: min(92vw, 500px);
         height: auto;
+        bottom: auto;
         grid-template-columns: 1fr;
         justify-items: center;
-        padding: 10px 0;
+        padding: 6px 0;
     }
+    
+    #banner {
+        width: 100%;
+        gap: 6px;
+    }
+    
     #banner-characters {
         position: absolute;
-        top: 120px;
+        top: 100px;
         left: 50%;
         transform: translateX(-50%);
         gap: 12px;
         padding: 0 10px;
+        flex-wrap: nowrap;
     }
-    .character-img { height: 140px; }
+    
+    .char-wrap { gap: 30px; }
+    .character-img { height: 140px; width: auto; }
+
     #cake-area {
         position: absolute;
-        bottom: 60px;
+        bottom: 55px;
         left: 50%;
         transform: translateX(-50%);
-        gap: 36px;
+        gap: 32px;
+        padding: 0;
     }
-    #cake-table { width: 200px; }
-    #cake-top { width: 170px; height: 170px; margin: 0 auto 8px; }
-    #cake-slice-view { width: min(80vw, 260px); margin: 0 auto; }
-    #gift-btn { width: min(80vw, 240px); }
-    #gift-text { font-size: 0.95rem; }
-    #gifts { gap: 40px; margin-top: 40px; }
+    
+    #cake { max-width: 82vw; }
+    #cake-table { position: relative; width: 200px; height: auto; margin: 0 auto; }
+    .table-leg { height: 65px; }
+    #cake-top { width: 160px; height: 160px; margin: 20px auto 6px; }
+    #cake-slice-view { width: min(80vw, 250px); margin: 0 auto; }
+    #cake-hint { font-size: 0.92rem; }
+    #ground { height: 35px; }
     #signboard { display: none; }
-    #ground { height: 36px; }
+
+    .poke-card,
+    #card-stage {
+        width: min(80vw, 300px);
+        height: auto;
+        aspect-ratio: 5 / 7;
+    }
+
+    #gift-popup,
+    #gift-popup-red,
+    #gift-popup-blue {
+        width: 90vw;
+        max-width: 90vw;
+        padding: 16px 12px 20px;
+    }
+    #gift-popup-red,
+    #gift-popup-blue { max-height: 85vh; }
+    #gift-popup { height: auto; max-height: 85vh; }
+
+    #fortune-ball { width: 120px; height: 120px; }
+    #fortune-title { font-size: 1.1rem; }
+    #fortune-text { font-size: 0.84rem; }
+    #fortune-btn { padding: 9px 22px; font-size: 0.8rem; }
+    #fortune-teller { gap: 12px; }
+
+    .card-nav-btn { width: 36px; height: 36px; font-size: 1.2rem; }
+
+    #blowout { font-size: 0.8rem; padding: 7px 14px; }
+
+    #gifts { gap: 40px; margin-top: 30px; }
+    .gift { width: 80px; height: 80px; }
+    #gift-btn { display: block; width: min(80vw, 220px); margin: 15px auto; }
+    #gift-text { max-width: 80vw; font-size: 0.9rem; }
 }
