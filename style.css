@@ -2017,19 +2017,39 @@ h1{
 
     h1 { font-size: 1.1rem; padding: 8px 12px; }
 
-    /* Characters */
-    .character-img { height: 150px; width: 75px; }
-    .char-wrap { gap: 55px; }
+    /* Scene and banners */
+    #scene { height: calc(100vh - 70px); overflow: hidden; }
+    #banner-wrapper {
+        top: 10px;
+        bottom: auto;
+        height: auto;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 8px 8px 0;
+    }
+    #banner { gap: 8px; }
+    #banner-characters {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 10px;
+    }
+    .char-wrap { gap: 45px; }
+    .character-img { height: 150px; width: auto; }
 
     /* Cake area */
-    #scene { height: calc(100vh - 80px); }
+    #cake-area { bottom: 92px; gap: 40px; padding: 0 12px; }
+    #cake { max-width: 88vw; }
+    #cake-table { width: 220px; }
+    .table-leg { height: 70px; }
+    #cake-top { width: 180px; height: 180px; margin: 28px auto 8px; }
+    #cake-slice-view { width: min(92vw, 280px); margin: 40px auto; }
+    #plate { width: 90%; }
+    #slice { width: 88%; }
+    #cake-hint { font-size: 0.96rem; margin-bottom: 8px; }
 
     /* Card in popup */
-    .poke-card {
-        width: min(88vw, 320px);
-        height: auto;
-        aspect-ratio: 5 / 7;
-    }
+    .poke-card,
     #card-stage {
         width: min(88vw, 320px);
         height: auto;
@@ -2042,10 +2062,11 @@ h1{
     #gift-popup-blue {
         width: 96vw;
         max-width: 96vw;
-        padding: 28px 18px 32px;
+        padding: 22px 14px 28px;
     }
-    #gift-popup-red { height: 90vh; }
-    #gift-popup { height: auto; }
+    #gift-popup-red,
+    #gift-popup-blue { max-height: 90vh; }
+    #gift-popup { height: auto; max-height: 90vh; }
 
     /* Fortune teller compact */
     #fortune-ball { width: 130px; height: 130px; }
@@ -2064,5 +2085,8 @@ h1{
     #blowout { font-size: 0.85rem; padding: 8px 16px; }
 
     /* Gifts screen */
-    .gift { transform: scale(0.82); }
+    #gifts { gap: 46px; margin-top: 50px; }
+    .gift { width: 88px; height: 88px; transform: scale(0.78); }
+    #gift-btn { display: block; width: min(90vw, 240px); margin: 20px auto; }
+    #gift-text { max-width: 90vw; font-size: 0.95rem; }
 }

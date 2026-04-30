@@ -1,53 +1,58 @@
 function removeWhiteBg(img) {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = img.naturalWidth;
-    canvas.height = img.naturalHeight;
-    ctx.drawImage(img, 0, 0);
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const px = imageData.data;
-    const w = canvas.width, h = canvas.height;
-    const visited = new Uint8Array(w * h);
-    const queue = [];
+    try {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        if (!ctx || !img.naturalWidth || !img.naturalHeight) return;
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        ctx.drawImage(img, 0, 0);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const px = imageData.data;
+        const w = canvas.width, h = canvas.height;
+        const visited = new Uint8Array(w * h);
+        const queue = [];
 
-    // seed from all 4 edges
-    for (let x = 0; x < w; x++) { queue.push(x, 0); queue.push(x, h - 1); }
-    for (let y = 1; y < h - 1; y++) { queue.push(0, y); queue.push(w - 1, y); }
+        // seed from all 4 edges
+        for (let x = 0; x < w; x++) { queue.push(x, 0); queue.push(x, h - 1); }
+        for (let y = 1; y < h - 1; y++) { queue.push(0, y); queue.push(w - 1, y); }
 
-    while (queue.length) {
-        const y = queue.pop(), x = queue.pop();
-        const id = y * w + x;
-        if (visited[id]) continue;
-        visited[id] = 1;
-        const i = id * 4;
-        if (px[i] > 230 && px[i+1] > 230 && px[i+2] > 230) {
-            px[i+3] = 0;
-            if (x > 0)     queue.push(x-1, y);
-            if (x < w-1)   queue.push(x+1, y);
-            if (y > 0)     queue.push(x, y-1);
-            if (y < h-1)   queue.push(x, y+1);
-        }
-    }
-
-    // Erase any dark artifact rows connected to the top edge
-    for (let y = 0; y < Math.min(20, h); y++) {
-        let hasDark = false;
-        for (let x = 0; x < w; x++) {
-            const i = (y * w + x) * 4;
-            if (px[i+3] > 0 && px[i] < 60 && px[i+1] < 60 && px[i+2] < 60) {
-                hasDark = true;
-                break;
+        while (queue.length) {
+            const y = queue.pop(), x = queue.pop();
+            const id = y * w + x;
+            if (visited[id]) continue;
+            visited[id] = 1;
+            const i = id * 4;
+            if (px[i] > 230 && px[i+1] > 230 && px[i+2] > 230) {
+                px[i+3] = 0;
+                if (x > 0)     queue.push(x-1, y);
+                if (x < w-1)   queue.push(x+1, y);
+                if (y > 0)     queue.push(x, y-1);
+                if (y < h-1)   queue.push(x, y+1);
             }
         }
-        if (!hasDark) break;
-        for (let x = 0; x < w; x++) {
-            const i = (y * w + x) * 4;
-            px[i+3] = 0;
-        }
-    }
 
-    ctx.putImageData(imageData, 0, 0);
-    img.src = canvas.toDataURL();
+        // Erase any dark artifact rows connected to the top edge
+        for (let y = 0; y < Math.min(20, h); y++) {
+            let hasDark = false;
+            for (let x = 0; x < w; x++) {
+                const i = (y * w + x) * 4;
+                if (px[i+3] > 0 && px[i] < 60 && px[i+1] < 60 && px[i+2] < 60) {
+                    hasDark = true;
+                    break;
+                }
+            }
+            if (!hasDark) break;
+            for (let x = 0; x < w; x++) {
+                const i = (y * w + x) * 4;
+                px[i+3] = 0;
+            }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        img.src = canvas.toDataURL();
+    } catch (error) {
+        console.warn('removeWhiteBg skipped for', img.src, error);
+    }
 }
 
 document.querySelectorAll('.character-img').forEach(img => {
@@ -166,9 +171,10 @@ function animateFireworks() {
 const fireworkInterval = setInterval(spawnFirework, 800);
 animateFireworks();
 
-window.addEventListener('load', () => {
-    cake.classList.add('show');
-});
+// Show cake immediately — DOM is ready since script is at bottom of body.
+// window.load waits for all images, which can take longer than the 5.5s intro
+// on first visit, causing the blowout button to appear before the cake.
+cake.classList.add('show');
 
 blowout.addEventListener('click', () => {
     if (blown < flames.length) {
