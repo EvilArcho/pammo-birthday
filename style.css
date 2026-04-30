@@ -48,20 +48,22 @@ body::before {
     overflow: visible;
 }
 
+/* ── GROUND ── */
 #ground {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50px;
-    background: linear-gradient(to bottom, #5a3e1b, #3d2a0f);
+    height: 60px;
+    background: linear-gradient(to bottom, #6b4c30, #4a3220, #3d2a0f);
     z-index: 1;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.3);
 }
 
 /* ── TABLE ── */
 #cake-table {
     position: absolute;
-    bottom: 50px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -72,29 +74,31 @@ body::before {
 
 #table-top {
     width: 280px;
-    height: 18px;
+    height: 20px;
     background: linear-gradient(to bottom, #c68642, #8b5e3c);
     border-radius: 4px 4px 0 0;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 #table-legs {
     display: flex;
     justify-content: space-between;
     width: 240px;
+    margin-top: -2px;
 }
 
 .table-leg {
-    width: 16px;
-    height: 90px;
+    width: 18px;
+    height: 80px;
     background: linear-gradient(to bottom, #8b5e3c, #5c3d1e);
     border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /* ── CAKE ── */
 #cake-area {
     position: absolute;
-    bottom: 158px;
+    bottom: 165px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
@@ -2019,29 +2023,20 @@ h1{
 
     #scene {
         height: 100vh;
-        overflow: visible;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+        overflow: hidden;
+        position: relative;
         width: 100%;
     }
     
     #banner-wrapper {
         position: static;
         bottom: auto;
-        top: auto;
-        left: auto;
+        top: 0;
+        left: 0;
         width: 100%;
         height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        grid-template-columns: 1fr;
-        justify-items: center;
         padding: 6px 0;
         z-index: 4;
-        flex-shrink: 0;
     }
     
     .banner-pole-ground { display: none !important; }
@@ -2060,19 +2055,15 @@ h1{
     .char-label::after { display: none !important; }
 
     #cake-area {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin: auto auto 0 auto;
+        position: absolute;
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
         padding: 0;
         gap: 0;
         z-index: 3;
-        width: auto;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        margin: 0;
     }
     
     #cake { 
