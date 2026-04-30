@@ -2060,15 +2060,15 @@ h1{
     .char-label::after { display: none !important; }
 
     #cake-area {
-        position: absolute;
-        bottom: 35px;
-        left: 50%;
-        transform: translateX(-50%);
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+        padding: 0;
         gap: 0;
         z-index: 3;
         width: auto;
-        padding: 0;
-        margin: 0;
     }
     
     #cake { 
@@ -2108,6 +2108,7 @@ h1{
         bottom: auto;
         left: auto;
         z-index: 1;
+        margin-top: auto;
     }
     
     #signboard { display: none !important; }
