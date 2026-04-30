@@ -2060,15 +2060,15 @@ h1{
     .char-label::after { display: none !important; }
 
     #cake-area {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin: 20px auto 0;
-        padding: 0;
+        position: absolute;
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
         gap: 0;
         z-index: 3;
         width: auto;
+        padding: 0;
+        margin: 0;
     }
     
     #cake { 
