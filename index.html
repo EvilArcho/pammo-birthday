@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="fireworks"></canvas>
+    <h1>Happy Birthday to the sweetest person on this planet</h1>
+    <div id="scene">
+
+    <!-- BANNER -->
+    <div id="banner-wrapper">
+        <div class="banner-pole-ground"></div>
+        <div id="banner">
+            <div class="bunting">
+                <span class="flag" style="background:#ffb6c1">H</span>
+                <span class="flag" style="background:#ff85a1">A</span>
+                <span class="flag" style="background:#ffb6c1">P</span>
+                <span class="flag" style="background:#ff85a1">P</span>
+                <span class="flag" style="background:#ffb6c1">Y</span>
+            </div>
+            <div class="bunting">
+                <span class="flag" style="background:#ff85a1">B</span>
+                <span class="flag" style="background:#ffb6c1">I</span>
+                <span class="flag" style="background:#ff85a1">R</span>
+                <span class="flag" style="background:#ffb6c1">T</span>
+                <span class="flag" style="background:#ff85a1">H</span>
+                <span class="flag" style="background:#ffb6c1">D</span>
+                <span class="flag" style="background:#ff85a1">A</span>
+                <span class="flag" style="background:#ffb6c1">Y</span>
+            </div>
+            <div class="bunting">
+                <span class="flag" style="background:#ff85a1">K</span>
+                <span class="flag" style="background:#ffb6c1">R</span>
+                <span class="flag" style="background:#ff85a1">I</span>
+                <span class="flag" style="background:#ffb6c1">T</span>
+                <span class="flag" style="background:#ff85a1">I</span>
+                <span class="flag" style="background:#ffb6c1">K</span>
+                <span class="flag" style="background:#ff85a1">A</span>
+            </div>
+        </div>
+        <div class="banner-pole-ground"></div>
+    </div>
+
+    <!-- CHARACTERS BELOW BANNER -->
+    <div id="banner-characters">
+        <div class="char-wrap">
+            <div class="char-label">me</div>
+            <img class="character-img" src="arv.png" alt="arv">
+        </div>
+        <div class="char-wrap">
+            <div class="char-label">you</div>
+            <img class="character-img" src="kc.png" alt="kc">
+        </div>
+    </div>
+
+    <!-- CAKE -->
+    <div id="cake-area">
+        <div id="cake">
+        <div class="layer top">
+            <div class="drip" style="left:-10px; height:25px; animation-delay: 1s;"></div>
+            <div class="drip" style="left:10px; height:25px; animation-delay: 1.2s;"></div>
+            <div class="drip" style="left:30px; height:35px; animation-delay: 1.4s"></div>
+            <div class="drip" style="left:50px; height:20px; animation-delay: 1.6s"></div>
+            <div class="drip" style="left:70px; height:30px; animation-delay: 1.8s"></div>
+            <div class="drip" style="left:90px; height:25px; animation-delay: 2s"></div>
+            <div class="drip" style="left:110px; height:40px; animation-delay: 2.2s"></div>
+            <div class="drip" style="left:125px; height:20px; animation-delay: 2.4s"></div>
+            <div class="candle" style="left:10px"><div class="flame"></div></div>
+            <div class="candle" style="left:40px"><div class="flame"></div></div>
+            <div class="candle" style="left:70px"><div class="flame"></div></div>
+            <div class="candle" style="left:100px"><div class="flame"></div></div>
+        </div>
+        <div class="layer middle">
+            <div class="drip" style="left:-15px; height:25px; animation-delay: 2.6s"></div>
+            <div class="drip" style="left:2px; height:30px; animation-delay: 2.8s"></div>
+            <div class="drip" style="left:26px; height:55px; animation-delay: 3s"></div>
+            <div class="drip" style="left:47px; height:40px; animation-delay: 3.2s"></div>
+            <div class="drip" style="left:72px; height:30px; animation-delay: 3.4s"></div>
+            <div class="drip" style="left:95px; height:50px; animation-delay: 3.6s"></div>
+            <div class="drip" style="left:120px; height:30px; animation-delay: 3.8s"></div>
+            <div class="drip" style="left:142px; height:45px; animation-delay: 4s"></div>
+            <div class="drip" style="left:165px; height:30px; animation-delay: 4.2s"></div>
+        </div>
+        <div class="layer bottom">
+            <div class="cut" id="cut1"></div>
+            <div class="cut" id="cut2"></div>
+        </div>
+        </div>
+    <button id="blowout">Blow out a candle!</button>
+</div>
+<div id="cake-table">
+    <div id="table-top"></div>
+    <div id="table-legs">
+        <div class="table-leg"></div>
+        <div class="table-leg"></div>
+    </div>
+</div>
+<div id="signboard">
+    <div id="sign-text">click whenever the animation stops!</div>
+    <div class="banner-pole"></div>
+</div>
+<div id="ground"></div>
+</div>
+<div id="cake-top">
+    <div class="ring bottom-ring"></div>
+    <div class="ring middle-ring"></div>
+    <div class="ring top-ring">
+        <div class="candle-top" style="top:36px; left:16px;"></div>
+        <div class="candle-top" style="top:36px; left:30px;"></div>
+        <div class="candle-top" style="top:36px; left:44px;"></div>
+        <div class="candle-top" style="top:36px; left:58px;"></div>
+    </div>
+     <div class="slice-cut" id="slice1"></div>
+    <div class="slice-cut" id="slice2"></div>
+</div>
+<div id="cake-hint">✂ click the cake to cut it!</div>
+<div id="cake-slice-view">
+    <div id="slice">
+        <div class="s-layer s-top"></div>
+        <div class="s-layer s-middle"></div>
+        <div class="s-layer s-bottom"></div>
+    </div>
+    <div id="plate"></div>
+</div>
+<button id="gift-btn">gift time? 🎁</button>
+<div id="gifts">
+    <div class="gift" id="gift-yellow">
+        <div class="ribbon-h"></div>
+        <div class="ribbon-v"></div>
+        <div class="bow"><div class="bow-left"></div><div class="bow-right"></div></div>
+    </div>
+    <div class="gift" id="gift-red">
+        <div class="ribbon-h"></div>
+        <div class="ribbon-v"></div>
+        <div class="bow"><div class="bow-left"></div><div class="bow-right"></div></div>
+    </div>
+    <div class="gift" id="gift-blue">
+        <div class="ribbon-h"></div>
+        <div class="ribbon-v"></div>
+        <div class="bow"><div class="bow-left"></div><div class="bow-right"></div></div>
+    </div>
+    <p id="gift-text"></p>
+</div>
+<div id="gift-popup">
+    <button id="gift-popup-close">✕</button>
+    <div id="fortune-teller">
+        <h2 id="fortune-title">🔮 Birthday Fortune 🔮</h2>
+        <div id="fortune-ball-wrap">
+            <div id="fortune-ball">
+                <div id="fortune-ball-shine"></div>
+                <div id="fortune-ball-glow"></div>
+            </div>
+            <div id="fortune-stand"></div>
+        </div>
+        <div id="fortune-display">
+            <p id="fortune-text">tap the button to reveal your fortune, pammo ✨</p>
+        </div>
+        <div id="fortune-counter">✦ &nbsp; &nbsp; ✦</div>
+        <button id="fortune-btn">✨ Reveal My Fortune ✨</button>
+    </div>
+</div>
+<div id="gift-popup-red">
+    <button id="gift-popup-red-close">✕</button>
+    <div id="pack-scene">
+        <div id="pokemon-pack">
+            <div class="pack-shine"></div>
+            <div class="pack-label">PAMMO</div>
+            <div class="pack-subtitle">✦ Ultra Rare Collection ✦</div>
+            <div class="pack-tap-hint">tap to open ✨</div>
+        </div>
+        <div id="pack-cards"></div>
+    </div>
+</div>
+<div id="gift-popup-blue">
+    <button id="gift-popup-blue-close">✕</button>
+    <img src="krit.jpg" id="krit-photo" alt="Kritika">
+    <p id="krit-birthday-text">HAPPY BIRTHDAY PAMMO</p>
+</div>
+<div id="birthday-popup">finally pammo cutie turned 20 🎂✨🥳💕</div>
+    <script src="script.js"></script>
+</body>
+</html>
